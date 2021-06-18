@@ -1,11 +1,8 @@
-let palindromes = function (str1) {
-  let stripped = str1
-    .replaceAll(".", "")
-    .replaceAll(",", "")
-    .replaceAll("!", "")
-    .replaceAll(" ", "")
-    .toLowerCase();
-  return stripped.split("").reverse().join("") === stripped;
+const palindromes = function (str) {
+  const REGEX = /[\s\.,!]/g;
+  const STRIPPED = str.replace(REGEX, "").toLowerCase();
+  const REVERSED = STRIPPED.split("").reverse("").join("");
+  return STRIPPED === REVERSED;
 };
 
 module.exports = palindromes;
